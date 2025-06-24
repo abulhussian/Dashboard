@@ -1,0 +1,15 @@
+/* Sidebar.css */
+.hover-pink:hover {
+  color: #ec4899 !important; /* pink-400 */
+}
+
+.sidebar {
+  width: 5rem;
+  min-height: 100vh;
+}
+
+@media (min-width: 992px) {
+  .sidebar {
+    width: 15rem; /* matches Tailwind's lg:w-60 */
+  }
+}
