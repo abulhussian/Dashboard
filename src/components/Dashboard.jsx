@@ -7,24 +7,24 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  useEffect(() => {
-    const getMasterData = async () => {
-      try {
-        const response = await axios.get(
-          "https://ai-height-estimate.onrender.com/master-data"
-        );
-        console.log("Master Data:", response.data);
-        setData(response.data); // Set the fetched data
-        setLoading(false); // Set loading to false
-      } catch (error) {
-        console.error("Error fetching master data:", error);
-        setError("Failed to load data");
-        setLoading(false);
-      }
-    };
+  const getMasterData = async () => {
+    try {
+      const response = await fetch(
+        "https://ai-height-estimate.onrender.com/master-data"
+      );
+      const data = await response.json();
+      console.log("Master Data:", data);
+    } catch (error) {
+      console.error("Error fetching master data:", error);
+    }
+  };
+  getMasterData();
 
-    getMasterData(); // Call it once when component mounts
-  }, []); // Empty dependency array: run once
+  // Empty dependency array: run once
+
+  // fetch("https://dummyjson.com/test")
+  //   .then((res) => res.json())
+  //   .then(console.log);
 
   if (loading) {
     return (
