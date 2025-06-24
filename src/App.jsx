@@ -16,14 +16,14 @@ export default function ProfileCard() {
 
         {/* Main Content */}
         {/* Profile Card */}
-        <Profile />
-        {/* <Notifications /> */}
-
-        {/* Appointments */}
+        {/* Dashboard*/}
         <Dashboard />
+        {/* <Profile /> */}
+
+        
 
         {/* Health Chart and Step Tracker */}
-        <Chart />
+        {/* <Chart /> */}
       </div>
     </div>
   );
